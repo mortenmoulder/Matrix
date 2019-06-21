@@ -19,8 +19,10 @@ Forked because I want to add more functions, which plays around with the Timebox
 The function you're going to hit, is called `rapid()` which takes a couple of parameters:
 
 ```
-interval
+BluetoothMatrix.rapid(interval, count, chunkCount, colors);
 ```
+
+### interval
 
 The wait in milliseconds between each color change.
 
@@ -28,9 +30,7 @@ I recommend 100 or above, because it makes the "animation" more fluid.
 
 **Example:** `100`
 
-```
-count
-```
+### count
 
 The amount of times it should repeat the color changes.
 
@@ -38,9 +38,7 @@ Set this to anything you want, basically. The higher the number, the more fun yo
 
 **Example:** `5`
 
-```
-chunkCount
-```
+### chunkCount
 
 The amount of chunks that gets sent to the Timebox each color change.
 
@@ -50,10 +48,16 @@ I recommend 2 chunks for the fastest update, but you can increase it to make fun
 
 **Example:** `2`
 
-```
-colors
-```
+### colors
 
 A 2D array of RGB color codes (0-255).
 
 **Example:** `[[255, 0, 0], [0, 255, 0], [0, 0, 255]]` (change from red -> green -> blue)
+
+## Complete example of rapid():
+
+```
+BluetoothMatrix.rapid(100, 5, 2, [[255, 255, 255], [0, 0, 0]]);
+```
+
+This rapidly changes colors from white to black a total of 5 times with an interval of 100ms between each color.
